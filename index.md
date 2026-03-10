@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-title: Sebastian Edward
+title: "Sebastian Edward"
 ---
 
 I am a SE student now.
