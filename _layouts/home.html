@@ -4,44 +4,41 @@ layout: default
 
 <div class="home">
 
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+    {%- if page.title -%}
+    <header class="post-header">
+        <h1 class="post-title">
+            {%- if site.avatar -%}
+            <img src="{{ site.avatar | relative_url }}" alt="{{ page.title }}" class="site-avatar">
+            {%- endif -%}
+            {{ page.title }}
+        </h1>
+    </header>
+    {%- endif -%}
 
-<div style="display:flex;align-items:center;gap:10px">
-<img src="/assets/avatar.jpg" style="width:48px;border-radius:50%">
-<strong>Sebastian</strong>
-</div>
+    <div class="post-content">
+        {{ content }}
+    </div>
 
-<div>
-<a href="https://github.com/sebastian_edward">GitHub</a>
-&nbsp;
-<a href="puton12138@email.com">Email</a>
-</div>
+    {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <ul class="post-list">
+        {%- for post in site.posts -%}
+        <li>
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+            <h3>
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                    {{ post.title | escape }}
+                </a>
+            </h3>
+            {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+            {%- endif -%}
+        </li>
+        {%- endfor -%}
+    </ul>
 
-</div>
-
-<p>
-Software engineering student interested in distributed systems,
-databases, and backend infrastructure.
-</p>
-
-<hr>
-
-<h2>Projects</h2>
-
-<ul>
-<li>Transportation Management System</li>
-<li>Vue Memo App</li>
-</ul>
-
-<h2>Posts</h2>
-
-<ul>
-{% for post in site.posts limit:5 %}
-<li>
-<a href="{{ post.url }}">{{ post.title }}</a>
-<span style="color:#777">{{ post.date | date: "%Y-%m-%d" }}</span>
-</li>
-{% endfor %}
-</ul>
+    <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml" | relative_url }}">via RSS</a></p>
+    {%- endif -%}
 
 </div>

@@ -18,15 +18,18 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Sebastian
-# email: sebastian@163.com
-description: >- # this means to ignore newlines until "baseurl:"
-  This is my blog post website.
-  To practice Feynman Technique, I write things I have learned to make them stick.
-# baseurl: '' # the subpath of your site, e.g. /blog
-# url: '' # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username:
-# github_username: sebastian-edward
+title: Sebastian Edward
+url: https://sebastian-edward.github.io
+email: puton12138@email.com
+author:
+  name: Sebastian Edward
+  email: puton12138@email.com
+tagline: Software Engineering Student
+description: >
+  Software engineering student interested in distributed systems,
+  databases, and backend infrastructure. Building things to learn.
+avatar: /assets/avatar.jpg
+github_username: sebastian_edward
 
 # Build settings
 theme: minima
