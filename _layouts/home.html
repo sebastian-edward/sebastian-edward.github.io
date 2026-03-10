@@ -2,20 +2,37 @@
 layout: default
 ---
 
-<div class="home">
+{% include header.html %}
 
-    <h1>Welcome</h1>
-    <p>I write about distributed systems, databases, and backend engineering.</p>
+<section class="intro">
+  <p>
+    Software engineering student interested in distributed systems,
+    databases, and backend infrastructure.
+  </p>
+</section>
 
-    <h2>Recent Posts</h2>
+<hr>
 
-    <ul>
-        {% for post in site.posts limit:5 %}
-        <li>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-            <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        </li>
-        {% endfor %}
-    </ul>
+<section class="projects">
+  <h2>Projects</h2>
+  <ul>
+    <li>Transportation Management System</li>
+    <li>Vue Memo App</li>
+  </ul>
+</section>
 
-</div>
+<section class="posts">
+  <h2>Posts</h2>
+
+  <ul>
+  {% for post in site.posts limit:5 %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+    </li>
+  {% endfor %}
+  </ul>
+
+</section>
+
+{% include footer.html %}

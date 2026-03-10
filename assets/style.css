@@ -1,0 +1,33 @@
+.site-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+}
+
+.header-left{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.avatar{
+width:40px;
+height:40px;
+border-radius:50%;
+}
+
+.header-right a{
+margin-left:15px;
+}
+
+.intro{
+margin:40px 0;
+font-size:18px;
+}
+
+.site-footer{
+margin-top:50px;
+padding:20px;
+border-top:1px solid #ddd;
+}
