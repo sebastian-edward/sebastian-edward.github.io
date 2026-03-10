@@ -294,7 +294,7 @@ img{
   height: 40px;
   background-image: url('/avatar.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto 100%;
 }
 
 section{
