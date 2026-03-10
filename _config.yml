@@ -20,25 +20,17 @@
 
 title: Sebastian Edward
 url: https://sebastian-edward.github.io
-email: puton12138@email.com
+email: puton12138@163.com
 author:
   name: Sebastian Edward
-  email: puton12138@email.com
+  email: puton12138@163.com
 tagline: Software Engineering Student
-description: >
-  Software engineering student interested in distributed systems,
+description: Software engineering student interested in distributed systems,
   databases, and backend infrastructure. Building things to learn.
-avatar: /assets/avatar.jpg
-github_username: sebastian_edward
-
+markdown: kramdown
 # Build settings
-theme: minima
-# plugins:
-# - jekyll-feed
-
-header_pages:
-  - blog.md
-  - about.md
+plugins:
+  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.

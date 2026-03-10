@@ -2,43 +2,54 @@
 layout: default
 ---
 
-<div class="home">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Sebastian Edward",
+    "url": "{{ site.url }}",
+    "image": "{{ site.url }}/avatar.jpg",
+    "jobTitle": "Software Engineer",
+    "description": "{{ site.description }}",
+    "knowsAbout": ["Open Source", "Java"],
+    "sameAs": [
+      "https://github.com/sebastian-edward"
+    ]
+  }
+}
+</script>
 
-    {%- if page.title -%}
-    <header class="post-header">
-        <h1 class="post-title">
-            {%- if site.avatar -%}
-            <img src="{{ site.avatar | relative_url }}" alt="{{ page.title }}" class="site-avatar">
-            {%- endif -%}
-            {{ page.title }}
-        </h1>
-    </header>
-    {%- endif -%}
-
-    <div class="post-content">
-        {{ content }}
+<div class="row">
+    <div class="col-12">
+        Software engineering student interested in distributed systems, databases, and backend infrastructure.
     </div>
+</div>
+<hr>
 
+<section class="posts">
+    <h3 id="recent-posts">Recent Posts</h3>
     {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-        {%- for post in site.posts -%}
+    <ul>
+        {%- for post in site.posts limit:10 -%}
         <li>
-            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-            <span class="post-meta">{{ post.date | date: date_format }}</span>
-            <h3>
+            <h4>
                 <a class="post-link" href="{{ post.url | relative_url }}">
                     {{ post.title | escape }}
                 </a>
-            </h3>
-            {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
+            </h4>
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <p class="post-meta">{{ post.date | date: date_format }}</p>
+            {%- if post.description -%}
+            <p class="post-description">{{ post.description }}</p>
             {%- endif -%}
         </li>
         {%- endfor -%}
     </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml" | relative_url }}">via RSS</a></p>
+    {%- if site.posts.size > 10 -%}
+    <p><a href="/posts/">View all posts</a></p>
+    {%- endif -%}
     {%- endif -%}
 
-</div>
+</section>

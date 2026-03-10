@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+
+<head>
+
+    <meta content='Sebastian Edward' name='author'>
+    <meta content='noodp' name='robots'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="/style.css">
+    <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
+    <script>
+        (function () { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t) })();
+    </script>
+    <link rel="me" href="https://github.com/sebastian-edward">
+    <link rel="author" href="/humans.txt">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {%- seo -%}
+    {%- feed_meta -%}
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg w-100">
+                <a href="/" class="navbar-brand face" aria-label="Home"></a>
+                <span class="navbar-brand mb-0 h1"> <a href="/">Sebastian Edward</a> </span>
+
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item">
+                        <a rel="me" href="https://github.com/sebastian-edward" aria-label="GitHub"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                            </svg></a>&nbsp;
+                        <a href="{{ " /feed.xml" | relative_url }}" aria-label="RSS Feed"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2m0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2m.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                            </svg></a>&nbsp;
+                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
+                            </svg></button>
+                    </li>
+                    <li class="navbar-item">
+
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <main aria-label="Content">
+            {{ content }}
+        </main>
+
+        <footer class="site-footer">
+            <span class="footer-nav">
+                <a href="https://github.com/andrew">GitHub</a> ·
+                <a href="{{ " /feed.xml" | relative_url }}">RSS</a> ·
+                <a href="{{ " /stats" | relative_url }}">Stats</a> ·
+                <a href="{{ " /search" | relative_url }}">Search</a> ·
+                <a href="{{ " /about" | relative_url }}">About</a>
+            </span>
+            {% if page.layout == "post" %}
+            <span class="footer-source">
+                // TODO: fill this
+                <a href="https://github.com//blob/master/{{ page.path }}">View source</a>
+            </span>
+            {% endif %}
+        </footer>
+    </div>
+    <script>
+        (function () {
+            var btn = document.getElementById('theme-toggle');
+            var moon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/></svg>';
+            var sun = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M3.757 4.464a.5.5 0 0 1-.707 0L1.636 3.05a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707"/></svg>';
+            function isDark() {
+                var t = document.documentElement.getAttribute('data-theme');
+                if (t) return t === 'dark';
+                return window.matchMedia('(prefers-color-scheme: dark)').matches;
+            }
+            function updateIcon() { btn.innerHTML = isDark() ? sun : moon }
+            updateIcon();
+            btn.addEventListener('click', function () {
+                var next = isDark() ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+                updateIcon();
+            });
+            document.querySelectorAll('h2[id], h3[id], h4[id], h5[id]').forEach(function (h) {
+                var a = document.createElement('a');
+                a.className = 'anchor-link';
+                a.href = '#' + h.id;
+                a.textContent = '#';
+                h.appendChild(a);
+            });
+        })();
+    </script>
+    <div data-ea-publisher="sebastian-edward" data-ea-type="text" data-ea-style="fixedfooter" class="adaptive"></div>
+</body>
+
+</html>
