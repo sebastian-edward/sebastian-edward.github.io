@@ -2,14 +2,32 @@
 layout: default
 ---
 
-<section class="intro">
+<div class="home">
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+
+<div style="display:flex;align-items:center;gap:10px">
+<img src="/assets/avatar.jpg" style="width:48px;border-radius:50%">
+<strong>Sebastian</strong>
+</div>
+
+<div>
+<a href="https://github.com/yourname">GitHub</a>
+&nbsp;
+<a href="mailto:you@email.com">Email</a>
+</div>
+
+</div>
+
+<p>
 Software engineering student interested in distributed systems,
 databases, and backend infrastructure.
-</section>
+</p>
 
 <hr>
 
 <h2>Projects</h2>
+
 <ul>
 <li>Transportation Management System</li>
 <li>Vue Memo App</li>
@@ -21,7 +39,9 @@ databases, and backend infrastructure.
 {% for post in site.posts limit:5 %}
 <li>
 <a href="{{ post.url }}">{{ post.title }}</a>
-{{ post.date | date: "%Y-%m-%d" }}
+<span style="color:#777">{{ post.date | date: "%Y-%m-%d" }}</span>
 </li>
 {% endfor %}
 </ul>
+
+</div>
